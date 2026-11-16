@@ -1,0 +1,294 @@
+/* Reset and basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Sidebar styles */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 260px;
+    background-color: #11101d;
+    color: #fff;
+    transition: width 0.3s ease;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+.sidebar.active {
+    width: 60px;
+}
+
+.logo-details {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #1a1a2e;
+}
+
+.logo-details i {
+    font-size: 2rem;
+    margin-right: 5px;
+    color: #ffffff;
+}
+
+.logo-details .logo_name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.nav-links {
+    margin-top: 20px;
+}
+
+.nav-links a {
+    display: block;
+    padding: 12px 20px;
+    color: #ccc;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #1a1a2e;
+    color: #fff;
+}
+
+.nav-links .active {
+    background-color: #1a1a2e;
+    color: #fff;
+}
+
+.sidebar-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+}
+
+.sidebar-button .dashboard {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ccc;
+}
+
+.sidebar-button .bx {
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+.sidebar-button .bx:hover {
+    color: #e5e5e5;
+}
+
+/* Main content styles */
+.home-section {
+    margin-left: 260px;
+    padding: 20px;
+}
+
+.home-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.home-content .overview-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.home-content .box {
+    flex: 1;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.home-content .box .right-side {
+    flex: 1;
+}
+
+.home-content .box .box-topic {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.home-content .box .number {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333333;
+}
+
+.home-content .box .indicator {
+    display: flex;
+    align-items: center;
+    color: #4caf50;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.home-content .box .indicator i {
+    margin-right: 5px;
+}
+
+.home-content .sales-boxes {
+    margin-bottom: 20px;
+}
+
+.home-content .recent-sales .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.home-content .sales-details .details {
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+.home-content .sales-details .details .topic {
+    font-weight: 600;
+    color: #333333;
+}
+
+.home-content .vehicle-form {
+    margin-top: 20px;
+}
+
+.home-content .vehicle-form .title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 15px;
+}
+
+.home-content .vehicle-form form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.home-content .vehicle-form .form-group {
+    flex: 1 0 50%;
+    margin-bottom: 15px;
+}
+
+.home-content .vehicle-form .form-group label {
+    font-weight: 600;
+    color: #333333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.home-content .vehicle-form .form-group input,
+.home-content .vehicle-form .form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.home-content .vehicle-form .form-buttons {
+    margin-top: 20px;
+}
+
+.home-content .vehicle-form .form-buttons button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.home-content .vehicle-form .form-buttons button:hover {
+    background-color: #1a1a2e;
+    color: #ffffff;
+}
+
+/* Profile details styles */
+.profile-details {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+}
+
+.profile-details img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.profile-details .admin_name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333333;
+}
+
+.profile-details .bx-chevron-down {
+    font-size: 1.4rem;
+    margin-left: 5px;
+    color: #333333;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+    .sidebar {
+        width: 220px;
+    }
+    .sidebar.active {
+        width: 60px;
+    }
+    .home-section {
+        margin-left: 220px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 180px;
+    }
+    .sidebar.active {
+        width: 60px;
+    }
+    .home-section {
+        margin-left: 180px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sidebar {
+        width: 140px;
+    }
+    .sidebar.active {
+        width: 60px;
+    }
+    .home-section {
+        margin-left: 140px;
+    }
+}

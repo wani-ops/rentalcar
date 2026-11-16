@@ -1,0 +1,293 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 240px;
+  background-color: #0A2558;
+  transition: all 0.5s ease;
+  z-index: 1000;
+}
+
+.sidebar .logo-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  color: #fff;
+}
+
+.sidebar .logo-details i {
+  font-size: 28px;
+  margin-right: 10px;
+}
+
+.sidebar .logo-details .logo_name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.sidebar .nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar .nav-links li {
+  list-style: none;
+  width: 100%;
+}
+
+.sidebar .nav-links li a {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+.sidebar .nav-links li a:hover, .sidebar .nav-links li a.active {
+  background-color: #081D45;
+}
+
+.sidebar .nav-links li a i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.sidebar .log_out {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+}
+
+.sidebar .log_out a {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+.sidebar .log_out a i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+/* Home Section Styles */
+.home-section {
+  position: relative;
+  min-height: 100vh;
+  width: calc(100% - 240px);
+  left: 240px;
+  transition: all 0.5s ease;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.home-section nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  background-color: #fff;
+  padding: 0 20px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.home-section nav .sidebar-button {
+  display: flex;
+  align-items: center;
+}
+
+.home-section nav .sidebar-button i {
+  font-size: 24px;
+  cursor: pointer;
+  color: #0A2558;
+}
+
+.home-section nav .dashboard {
+  font-size: 22px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.home-section nav .search-box {
+  position: relative;
+  width: 300px;
+}
+
+.home-section nav .search-box input {
+  height: 40px;
+  width: 100%;
+  outline: none;
+  background: #F1F1F1;
+  border: none;
+  border-radius: 5px;
+  padding: 0 15px;
+}
+
+.home-section nav .search-box .bx-search {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  cursor: pointer;
+  color: #333;
+}
+
+.home-section nav .profile-details {
+  display: flex;
+  align-items: center;
+}
+
+.home-section nav .profile-details img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.home-section nav .profile-details .admin_name {
+  margin-left: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.home-section nav .profile-details .bx-chevron-down {
+  font-size: 24px;
+  margin-left: 10px;
+  cursor: pointer;
+  color: #0A2558;
+}
+
+.home-content {
+  margin-top: 20px;
+}
+
+.home-content .container {
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.home-content .container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #0A2558;
+}
+
+.home-content .table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.home-content .table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.home-content .table thead {
+  background-color: #0A2558;
+  color: #fff;
+}
+
+.home-content .table thead th {
+  padding: 12px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.home-content .table tbody tr {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.home-content .table tbody tr:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+.home-content .table tbody td {
+  padding: 12px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 60px;
+  }
+  
+  .sidebar.active {
+    width: 240px;
+  }
+  
+  .home-section {
+    width: calc(100% - 60px);
+    left: 60px;
+  }
+  
+  .home-section nav .sidebar-button span {
+    display: none;
+  }
+  
+  .home-section nav .search-box {
+    width: 200px;
+  }
+  
+  .home-section nav .search-box input {
+    width: 100%;
+  }
+}
+
+.table-container {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.table-container .table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container .table thead th {
+  background-color: #0A2558;
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+}
+
+.table-container .table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.table-container .table tbody tr:nth-child(even) {
+  background-color: #f4f4f4;
+}
+
+.table-container .table tbody td {
+  padding: 12px;
+  text-align: left;
+}

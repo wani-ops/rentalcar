@@ -1,0 +1,661 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Rizki Car Rental</title>
+
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              Rizki Car Rental
+            </span>
+          </a>
+
+          <div class="navbar-collapse" id="">
+            <div class="user_option">
+              <div class="btn-block">
+                <a href="../login_signup/logout_user_page.php" >Log Out</a>
+              </div>
+            </div>
+            <div class="custom_menu-btn">
+              <button onclick="openNav()">
+                <span class="s-1"> </span>
+                <span class="s-2"> </span>
+                <span class="s-3"> </span>
+              </button>
+            </div>
+            <div id="myNav" class="overlay">
+              <div class="overlay-content">
+                <a href="index.html">Home</a>
+                <a href="profiledisplay.php">Profile</a>
+                <a href="profileedit.php">Update Profile</a>
+                <a href="rent.php">Reservation</a>
+                <a href="rentalhistory.php">Rental History</a>
+                <a href="../login_signup/logout_user_page.php">Log Out</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class=" slider_section position-relative">
+      <div class="slider_container">
+        <div class="img-box">
+          <img src="images/images.jpg" alt="">
+        </div>
+        <div class="detail_container">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="detail-box">
+                  <h1>
+                    Rizki <br>
+                    Car Rental <br>
+                  </h1>
+                  <a href="https://wa.me/+60135260640">
+                    Contact Us
+                  </a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="detail-box">
+                  <h1>
+                    Rizki <br>
+                    Car Rental <br>
+                  </h1>
+                  <a href="https://wa.me/+60135260640">
+                    Contact Us
+                  </a>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="detail-box">
+                  <h1>
+                   Rizki <br>
+                    Car Rental <br>
+                  </h1>
+                  <a href="https://wa.me/+60135260640">
+                    Contact Us
+                  </a>
+                </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+  
+    <!-- user profile section -->
+
+    <section class="user_profile_section layout_padding2-top layout_padding-bottom">
+      <div class="container">
+        <div class="heading_container">
+          <h2>
+            User Profile
+          </h2>
+          <p>
+            Manage your personal information and settings.
+          </p>
+        </div>
+        <div class="user_profile_container">
+          <div class="box">
+            <div class="img-box">
+              <img src="images/user-profile.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Personal Information
+              </h5>
+              <p>
+                View and update your personal details.
+              </p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="img-box">
+              <img src="images/user-settings.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Account Settings
+              </h5>
+              <p>
+                Manage your account settings and preferences.
+              </p>
+            </div>
+          </div>
+          <div class="box">
+            <div class="img-box">
+              <img src="images/user-history.png" alt="">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Rental History
+              </h5>
+              <p>
+                View your past and current rental history.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <!-- end user profile section -->
+
+  <!-- about section -->
+
+  <section class="about_section layout_padding-bottom">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-7 px-0">
+          <div class="img-box">
+            <img src="images/about-img.png" alt="">
+          </div>
+        </div>
+        <div class="col-md-4 col-lg-3">
+          <div class="detail-box">
+            <h2>
+              About Our Cars
+            </h2>
+            <p>
+			Rizki Car Rental isn't just another car rental company. It's a place that puts people first, making sure they get where they need to go comfortably and conveniently.
+            </p>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end about section -->
+
+
+  <!-- best section -->
+
+  <section class="best_section">
+    <div class="container">
+      <div class="book_now">
+        <div class="detail-box">
+          <h2>
+            Our Best Cars
+          </h2>
+          <p>
+Quick access to vehicles without requiring 
+reservations streamlines the rental process, 
+reduces waiting times, and enhances convenience 
+for customers
+          </p>
+        </div>
+        <div class="btn-box">
+          <a href="rent.php">
+            Book Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end best section -->
+
+  <!-- rent section -->
+
+  <section class="rent_section layout_padding">
+    <div class="container">
+      <div class="rent_container">
+        <div class="box">
+          <div class="img-box">
+            <img src="images/axia.jpeg" alt="">
+          </div>
+          <div class="price">
+            <a href="info/info.html">
+              Rent Info
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="images/bezza.jpg" alt="">
+          </div>
+          <div class="price">
+            <a href="info/info.html">
+              Rent Info
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="images/myvi.jpg" alt="">
+          </div>
+          <div class="price">
+            <a href="info/info.html">
+              Rent Info
+            </a>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="images/saga.jpg" alt="">
+          </div>
+          <div class="price">
+            <a href="info/info.html">
+              Rent Info
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- end rent section -->
+
+  <!-- blog section -->
+
+  <section class="blog_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Our Objective
+        </h2>
+        <p>
+         
+        </p>
+      </div>
+    </div>
+    <div class="blog_container">
+      <div class="layout_padding2-top">
+        <div class="carousel-wrap ">
+          <div class="owl-carousel">
+            <div class="item">
+              <div class="box">
+                <div class="date-box">
+                  <h6>
+                    Security
+                  </h6>
+                </div>
+                <div class="img-box">
+                  <img src="images/b-1.jpg" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Security
+                  </h5>
+                  <p>
+                    To provide a secure system that ensures customer data and organization sensitive information</p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="date-box">
+                  <h6>
+                    User-Friendly
+                  </h6>
+                </div>
+                <div class="img-box">
+                  <img src="images/b-2.jpg" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    User-Friendly
+                  </h5>
+                  <p>
+                    To establish a user-friendly online booking and reservation system that lets customers check the availability of cars. </p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="date-box">
+                  <h6>
+                    Management
+                  </h6>
+                </div>
+                <div class="img-box">
+                  <img src="images/b-3.jpg" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Management
+                  </h5>
+                  <p>
+                     To create a system that keeps track of reservations, payment history, and booking details so system can keep track of transaction. </p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="date-box">
+                  <h6>
+                    Efficiency
+                  </h6>
+                </div>
+                <div class="img-box">
+                  <img src="images/b-2.jpg" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>
+                    Efficiency
+                  </h5>
+                  <p>
+                    To assist by this automated system, which allow customers to complete the information as needed. </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end blog section -->
+
+  <!-- us section -->
+
+  <section class="us_section">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Why choose Us
+        </h2>
+        <p>
+          
+        </p>
+      </div>
+    </div>
+    <div class="us_container layout_padding2">
+      <div class="content_box">
+        <div class="box">
+          <div class="img-box">
+            <img src="images/u-1.png" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              Low Rent
+            </h5>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="images/u-2.png" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              Fast Car
+            </h5>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="images/u-3.png" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              Safe Car
+            </h5>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img-box">
+            <img src="images/u-4.png" alt="">
+          </div>
+          <div class="detail-box">
+            <h5>
+              Quick Support
+            </h5>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end us section -->
+
+  <!-- client section -->
+
+  <section class="client_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          What Is say Customer
+        </h2>
+        <p>
+          Summary of customer opinion
+        </p>
+      </div>
+      <div class="layout_padding2-top">
+        <div class="carousel-wrap ">
+          <div class="owl-carousel">
+            <div class="item">
+              <div class="box">
+                <div class="detail-box">
+                  <p>
+                     Customers value efficiency and convenience, leading to increased customer satisfaction and repeat business.
+                  </p>
+                </div>
+                <div class="client_id">
+                  <div class="img-box">
+                    <img src="images/client-1.png" alt="" class="img-1">
+                    <img src="images/client-1-white.png" alt="" class="img-2">
+                  </div>
+                  <div class="name">
+                    <h6>
+                      Satification
+                    </h6>
+                    <p>
+                     
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="detail-box">
+                  <p>
+                     Happy customers are more likely to return for future rentals and recommend Rizki Car Rental to others. Offering added value through perks differentiates the business and strengthens its competitive edge in the market.
+                  </p>
+                </div>
+                <div class="client_id">
+                  <div class="img-box">
+                    <img src="images/client-2.png" alt="" class="img-1">
+                    <img src="images/client-2-white.png" alt="" class="img-2">
+                  </div>
+                  <div class="name">
+                    <h6>
+                      Services
+                    </h6>
+                    <p>
+                      
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="detail-box">
+                  <p>
+                    Customers enjoy flexibility when it comes to reservation adjustments, pickup/drop locations, and rental duration. Flexible rental solutions that can adapt to unforeseen events or changes in travel schedules are frequently chosen.
+                  </p>
+                </div>
+                <div class="client_id">
+                  <div class="img-box">
+                    <img src="images/client-1.png" alt="" class="img-1">
+                    <img src="images/client-1-white.png" alt="" class="img-2">
+                  </div>
+                  <div class="name">
+                    <h6>
+                      Flexibility
+                    </h6>
+                    <p>
+                      
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="detail-box">
+                  <p>
+                   When travelling for either business or leisure, cars rental systems are highly convenient, as many customers have discovered. They appreciate being able to rent a car online or via an app, pick it up at a convenient location, and return it when needed.
+                  </p>
+                </div>
+                <div class="client_id">
+                  <div class="img-box">
+                    <img src="images/client-1.png" alt="" class="img-1">
+                    <img src="images/client-1-white.png" alt="" class="img-2">
+                  </div>
+                  <div class="name">
+                    <h6>
+                      Convenience
+					  </h6>
+                    <p>
+                      
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- end client section -->
+
+  <!-- contact section -->
+
+  <section class="contact_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="contact_items">
+
+        <a href="https://maps.app.goo.gl/1jkrHSAXMmZn3sKs8">
+          <div class="img-box">
+            <img src="images/location.png" alt="">
+          </div>
+          <h6>
+            Fasa 6 <br>
+			Merbok
+			Kedah
+          </h6>
+        </a>
+        <a href="https://wa.me/+60135260640">
+          <div class="img-box">
+            <img src="images/call.png" alt="">
+          </div>
+          <h6>
+            Alya (+60 1126573763) <br>
+			
+          </h6>
+        </a>
+        <a href="mailto:2022837738@student.uitm.edu.my">
+          <div class="img-box">
+            <img src="images/mail.png" alt="">
+          </div>
+          <h6>
+            2022837738@student.uitm.edu.my
+          </h6>
+        </a>
+        
+
+      </div>
+      <div class="social_container">
+        <div class="social-box">
+          <div>
+            <a href="https://wa.me/+60135260640">
+              <img src="images/WA.PNG" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end contact section -->
+
+  <!-- map section -->
+
+  <section class="map_section">
+    <!-- map section -->
+    <div class="map_container">
+      <div class="map-responsive">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.0051412039156!2d100.43033499999999!3d5.7123924999999955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304b27d9f0e654e3%3A0x482b6b00527e9dca!2sTaman%20Lembah%20Bujang%2C%20Fasa%206!5e0!3m2!1sen!2smy!4v1719284085945!5m2!1sen!2smy" width="600" height="300" frameborder="0" style="border:0; width: 100%; height:100%" allowfullscreen></iframe>
+      </div>
+    </div>
+    <!-- end map section -->
+  </section>
+
+
+  <!-- end map section -->
+
+  <!-- footer section -->
+  <footer class="container-fluid footer_section">
+    <p>
+      Copyright &copy; 2020 All Rights Reserved. Design by
+      <a href="https://html.design/">Free Html Templates</a>
+    </p>
+  </footer>
+  <!-- footer section -->
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <script src="js/custom.js"></script>
+
+
+</body>
+
+</html>

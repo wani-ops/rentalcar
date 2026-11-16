@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicles | Rizki Car Rental Dashboard</title>
+    <link rel="stylesheet" href="style_vehicle.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        /* Additional styles can be placed here if needed */
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+          <i class="bx bxs-car"></i>
+          <span class="logo_name">Rizki Car Rental</span>
+        </div>
+        <ul class="nav-links">
+            </ul>
+            <a href="#" class="active">
+                <i class="bx bx-grid-alt"></i>
+                <span class="links_name">Booking History</span>
+              </a>
+            </li>
+            <li>
+              <a href="profile.html">
+                <i class="bx bx-user"></i>
+                <span class="links_name">Users</span>
+              </a>
+            </li>
+            <a href="vehicles.html">
+              <i class="bx bx-user"></i>
+              <span class="links_name">Vehicle</span>
+            </a>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <nav>
+            <div class="sidebar-button">
+                <i class='bx bx-menu sidebarBtn'></i>
+                <span class="dashboard">Vehicles</span>
+            </div>
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Search...">
+                <button type="button" id="search-btn">
+                    <i class='bx bx-search'></i>
+                </button>
+            </div>
+            <div class="profile-details">
+                <img src="images/profile.jpg" alt="Profile" id="admin-profile-img">
+                <span class="admin_name">Admin</span>
+                <i class='bx bx-chevron-down'></i>
+            </div>
+        </nav>
+        <div class="home-content">
+            <div class="overview-boxes">
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic">Total Vehicles</div>
+                        <div class="number">4</div>
+                        <div class="indicator">
+                            <i class='bx bx-up-arrow-alt'></i>
+                            <span class="text">Up from last month</span>
+                        </div>
+                    </div>
+                    <i class='bx bx-car cart'></i>
+                </div>
+            </div>
+            <div class="sales-boxes">
+                <div class="recent-sales box">
+                    <div class="title">Vehicle List</div>
+                    <div class="sales-details">
+                        <ul class="details" id="vehicle-id-list">
+                            <li class="topic">ID</li>
+                            <li><a href="#">7</a></li>
+                            <li><a href="#">8</a></li>
+                            <li><a href="#">6</a></li>
+                            <li><a href="#">5</a></li>
+                        </ul>
+                        <ul class="details" id="vehicle-model-list">
+                            <li class="topic">Model</li>
+                            <li><a href="#">SAGA</a></li>
+                            <li><a href="#">BEZZA</a></li>
+                            <li><a href="#">AXIA</a></li>
+                            <li><a href="#">MYVI</a></li>
+                        </ul>
+                        <ul class="details" id="vehicle-status-list">
+                            <li class="topic">Status</li>
+                            <li>
+                                <select class="vehicle-status" data-id="1">
+                                    <option value="Available">Available</option>
+                                    <option value="Booked">Booked</option>
+                                    <option value="In Service">In Service</option>
+                                </select>
+                            </li>
+                            <li>
+                                <select class="vehicle-status" data-id="2">
+                                    <option value="Available">Available</option>
+                                    <option value="Booked">Booked</option>
+                                    <option value="In Service">In Service</option>
+                                </select>
+                            </li>
+                            <li>
+                                <select class="vehicle-status" data-id="3">
+                                    <option value="Available">Available</option>
+                                    <option value="Booked">Booked</option>
+                                    <option value="In Service">In Service</option>
+                                </select>
+                            </li>
+                            <li>
+                                <select class="vehicle-status" data-id="4">
+                                    <option value="Available">Available</option>
+                                    <option value="Booked">Booked</option>
+                                    <option value="In Service">In Service</option>
+                                </select>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <!-- Add Form for Vehicle Insert and Drop -->
+            <div class="vehicle-form box">
+                <div class="title">Add or Remove Vehicle</div>
+                <form id="vehicle-form">
+                    <div class="form-group">
+                        <label for="vehicle-id">ID:</label>
+                        <input type="text" id="vehicle-id" name="vehicle-id" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicle-model">Model:</label>
+                        <input type="text" id="vehicle-model" name="vehicle-model" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicle-status">Status:</label>
+                        <select id="vehicle-status" name="vehicle-status" required>
+                            <option value="Available">Available</option>
+                            <option value="Booked">Booked</option>
+                            <option value="In Service">In Service</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="form-buttons">
+                        <button type="button" id="insert-vehicle-btn">Insert Vehicle</button>
+                        <button type="button" id="drop-vehicle-btn">Drop Vehicle</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function () {
+            sidebar.classList.toggle("active");
+            if (sidebar.classList.contains("active")) {
+                sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            } else {
+                sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
+            }
+        }
+
+        // Insert vehicle functionality
+        document.getElementById('insert-vehicle-btn').addEventListener('click', function() {
+            let id = document.getElementById('vehicle-id').value.trim();
+            let model = document.getElementById('vehicle-model').value.trim();
+            let status = document.getElementById('vehicle-status').value;
+
+            if (id && model) {
+                let idList = document.getElementById('vehicle-id-list');
+                let modelList = document.getElementById('vehicle-model-list');
+                let statusList = document.getElementById('vehicle-status-list');
+
+                // Create new list items
+                let newIdItem = document.createElement('li');
+                newIdItem.innerHTML = `<a href="#">${id}</a>`;
+                idList.appendChild(newIdItem);
+
+                let newModelItem = document.createElement('li');
+                newModelItem.innerHTML = `<a href="#">${model}</a>`;
+                modelList.appendChild(newModelItem);
+
+                let newStatusItem = document.createElement('li');
+                let select = document.createElement('select');
+                select.className = 'vehicle-status';
+                select.dataset.id = id;
+                select.innerHTML = `
+                    <option value="Available" ${status === 'Available' ? 'selected' : ''}>Available</option>
+                    <option value="Booked" ${status === 'Booked' ? 'selected' : ''}>Booked</option>
+                    <option value="In Service" ${status === 'In Service' ? 'selected' : ''}>In Service</option>
+                `;
+                newStatusItem.appendChild(select);
+                statusList.appendChild(newStatusItem);
+
+                // Clear form fields after insertion
+                document.getElementById('vehicle-id').value = '';
+                document.getElementById('vehicle-model').value = '';
+                document.getElementById('vehicle-status').value = 'Available'; // Reset status to Available
+
+                // Update total vehicle count
+                let vehicleCount = document.querySelector('.box-topic.number');
+                vehicleCount.textContent = parseInt(vehicleCount.textContent) + 1;
+            } else {
+                alert('Please fill out both ID and Model fields.');
+            }
+        });
+
+        // Drop vehicle functionality
+        document.getElementById('drop-vehicle-btn').addEventListener('click', function() {
+            let id = document.getElementById('vehicle-id').value.trim();
+
+            if (id) {
+                let idList = document.getElementById('vehicle-id-list');
+                let modelList = document.getElementById('vehicle-model-list');
+                let statusList = document.getElementById('vehicle-status-list');
+
+                for (let i = 0; i < idList.children.length; i++) {
+                    if (idList.children[i].textContent === id) {
+                        idList.children[i].remove();
+                        modelList.children[i].remove();
+                        statusList.children[i].remove();
+
+                        // Update total vehicle count after removal
+                        let vehicleCount = document.querySelector('.box-topic.number');
+                        vehicleCount.textContent = parseInt(vehicleCount.textContent) - 1;
+
+                        // Exit loop after finding and removing the item
+                        break;
+                    }
+                }
+
+                // Clear form field after dropping
+                document.getElementById('vehicle-id').value = '';
+            } else {
+                alert('Please fill out the ID field to drop a vehicle.');
+            }
+        });
+
+        // Search functionality
+        document.getElementById('search-btn').addEventListener('click', function() {
+            let searchValue = document.getElementById('search-input').value.toLowerCase();
+            let vehicleIds = document.querySelectorAll('#vehicle-id-list li a');
+            let vehicleModels = document.querySelectorAll('#vehicle-model-list li a');
+
+            for (let i = 0; i < vehicleIds.length; i++) {
+                if (vehicleIds[i].textContent.toLowerCase().includes(searchValue) || 
+                    vehicleModels[i].textContent.toLowerCase().includes(searchValue)) {
+                    vehicleIds[i].parentElement.style.display = 'block';
+                    vehicleModels[i].parentElement.style.display = 'block';
+                } else {
+                    vehicleIds[i].parentElement.style.display = 'none';
+                    vehicleModels[i].parentElement.style.display = 'none';
+                }
+            }
+        });
+
+        // Edit admin profile image
+        let adminProfileImg = document.getElementById('admin-profile-img');
+        adminProfileImg.src = 'path/to/new/profile-image.jpg'; // Replace with actual path to new image
+    </script>
+</body>
+</html>
+
+
+
+

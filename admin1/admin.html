@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <title>Rizki Car Rental Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo-details">
+      <i class="bx bxs-car"></i>
+      <span class="logo_name">Rizki Car Rental</span>
+    </div>
+    <ul class="nav-links">
+      <li>
+        <a href="#" class="active">
+          <i class="bx bx-grid-alt"></i>
+          <span class="links_name">Booking History</span>
+        </a>
+      </li>
+      <li>
+        <a href="profile.php">
+          <i class="bx bx-user"></i>
+          <span class="links_name">Users</span>
+        </a>
+      </li>
+      <li>
+        <a href="cars.php">
+          <i class="bx bx-car"></i>
+          <span class="links_name">Cars</span>
+        </a>
+      </li>
+    </ul>
+    <div class="log_out">
+      <a href="../index1.html">
+        <i class="bx bx-log-out"></i>
+        <span class="links_name">Log out</span>
+      </a>
+    </div>
+  </div>
+  <div class="home-section">
+    <nav>
+      <div class="sidebar-button">
+        <i class='bx bx-menu sidebarBtn'></i>
+        <span class="dashboard">Booking History</span>
+      </div>
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search...">
+        <i class="bx bx-search"></i>
+      </div>
+      <div class="profile-details">
+        <span class="admin_name">Admin</span>
+      </div>
+    </nav>
+    <div class="home-content">
+      <div class="container">
+        <h2>Reservation List - Car Rental Site</h2>
+        <div class="table-container">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Reservation ID</th>
+                <th>Pickup Destination</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Time Duration</th>
+                <th>Customer ID</th>
+                <th>Customer Name</th>
+                <th>Customer Number</th>
+                <th>Car ID</th>
+                <th>Delivery Address</th>
+              </tr>
+            </thead>
+            <tbody id="reservation-carRentalSite-tbody">
+              <tr>
+                <td colspan="10">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="container">
+        <h2>Reservation List - Delivery</h2>
+        <div class="table-container">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>Reservation ID</th>
+                <th>Pickup Destination</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Time Duration</th>
+                <th>Customer ID</th>
+                <th>Customer Name</th>
+                <th>Customer Number</th>
+                <th>Car ID</th>
+                <th>Delivery Address</th>
+              </tr>
+            </thead>
+            <tbody id="reservation-delivery-tbody">
+              <tr>
+                <td colspan="10">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch('fetch_reservation.php')
+        .then(response => response.json())
+        .then(data => {
+          if (data.error) {
+            console.error(data.error);
+            return;
+          }
+
+          let tbodyCarRentalSite = document.getElementById('reservation-carRentalSite-tbody');
+          let tbodyDelivery = document.getElementById('reservation-delivery-tbody');
+
+          // Populate Car Rental Site reservations
+          if (data.carRentalSite.length > 0) {
+            tbodyCarRentalSite.innerHTML = '';
+            data.carRentalSite.forEach(reservation => {
+              let row = `<tr>
+                <td>${reservation.reserve_id}</td>
+                <td>${reservation.pickup_dest}</td>
+                <td>${reservation.date_start}</td>
+                <td>${reservation.date_end}</td>
+                <td>${reservation.time_duration}</td>
+                <td>${reservation.cust_id}</td>
+                <td>${reservation.cust_name}</td>
+                <td>${reservation.cust_no}</td>
+                <td>${reservation.car_id}</td>
+                <td>${reservation.fullAddress}</td>
+              </tr>`;
+              tbodyCarRentalSite.innerHTML += row;
+            });
+          } else {
+            tbodyCarRentalSite.innerHTML = '<tr><td colspan="10">No reservations found</td></tr>';
+          }
+
+          // Populate Delivery reservations
+          if (data.delivery.length > 0) {
+            tbodyDelivery.innerHTML = '';
+            data.delivery.forEach(reservation => {
+              let row = `<tr>
+                <td>${reservation.reserve_id}</td>
+                <td>${reservation.pickup_dest}</td>
+                <td>${reservation.date_start}</td>
+                <td>${reservation.date_end}</td>
+                <td>${reservation.time_duration}</td>
+                <td>${reservation.cust_id}</td>
+                <td>${reservation.cust_name}</td>
+                <td>${reservation.cust_no}</td>
+                <td>${reservation.car_id}</td>
+                <td>${reservation.fullAddress}</td>
+              </tr>`;
+              tbodyDelivery.innerHTML += row;
+            });
+          } else {
+            tbodyDelivery.innerHTML = '<tr><td colspan="10">No reservations found</td></tr>';
+          }
+        })
+        .catch(error => {
+          console.error('Error fetching reservation data:', error);
+          tbodyCarRentalSite.innerHTML = '<tr><td colspan="10">Error fetching reservation data</td></tr>';
+          tbodyDelivery.innerHTML = '<tr><td colspan="10">Error fetching reservation data</td></tr>';
+        });
+    });
+  </script>
+</body>
+</html>
